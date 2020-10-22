@@ -1,54 +1,58 @@
 * {
-	background: #9d9bcc;
+	/* background: #9d9bcc; */
+	background: black;
+	/* background-image: url("assets/glitch.jpg"); */
 
 	/* box-sizing and padding adopted from Craig's codepen
 	titled "An Example of Nesting Flexbox inside CSS Grid" located here:
 	https://codepen.io/profhobbs/pen/pGMxxa?editors=1100 */
-  box-sizing: border-box;
+	box-sizing: border-box;
 	padding: 1rem;
 }
 
-@media only screen and (max-width: 800px) {
-	/* navigation links are displayed in a row but if screen width is > 800px
+@media only screen and (max-width: 900px) {
+	/* navigation links are displayed in a row but if screen width is > 900px
 	they will display in a column */
-  header ul{
+	header ul{
 		flex-direction: column;
-  }
+	}
 }
 
 header {
-/* background-color: black; */
-width: 100%;
-/* height: 70px; */
-z-index: 3; /* bring layer to top of arrangement */
+	/* background-color: black; */
+	width: 100%;
+	/* height: 70px; */
+	z-index: 3; /* bring layer to top of arrangement */
 }
 
 header ul {
 	/* navigation links can adapt to viewport, and are displayed with equal anount
 	of space around each other and have no bullet points showing */
-display: flex;
-justify-content: space-around;
-list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+	list-style-type: none;
 }
 
-	/* -------styling font and transitioning colors of navigation links------- */
+/* -------styling font and transitioning colors of navigation links------- */
 header ul li {
-font-family: 'Libre Barcode 39 Text', cursive;
-font-size: 50px;
+	font-family: 'Libre Barcode 39 Text', cursive;
+	font-size: 50px;
 }
 
 header ul li a {
-color: #535178;
-text-decoration: none;
+	color: #535178;
+	text-decoration: none;
 }
 
 header ul li a:hover {
-  color: black;
+	/* color: #9d9bcc; */
+	 color: white;
 	transition:all 0.3s ease-in-out;
 }
 
 .active {
-	color: white;
+	/* color: white; */
+	color: #9d9bcc;
 }
 /* ------------------------------------------------------------------------- */
 
@@ -58,101 +62,128 @@ https://codepen.io/profhobbs/pen/pGMxxa?editors=1100 */
 
 main {
 	/* layout stretches to fill screens of different sizes but maximum width is set to 500px */
-  max-width: 500px;
-  margin: 0 auto;
+	max-width: 500px;
+	margin: 0 auto;
 }
 article {
 	/* setting margins on all 4 sides of boxes in the grid */
-  margin: 1rem 0;
+	margin: 1rem 0;
 }
 
 @supports (display: grid) {
 	/* setting the grid layout */
 
-  main {
+	main {
 		/* how far can a row in the grid be stretched out before wrapping to another row below */
-    max-width: 10000px;
-    margin: 0;
-  }
+		max-width: 10000px;
+		margin: 0;
+	}
 
-  article {
+	article {
 		/* not sure what effect this line of code has */
-    margin: 0;
-  }
+		margin: 0;
+	}
 
-  .portfoliowork {
+	.portfoliowork {
 		/* display the boxes in a grid layout with the number of columns
 		adjusting to set values and have the boxes at a distance of 1rem
 		away from each other; style font and color of text within the boxes */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-gap: 1rem;
 		font-family: 'Inconsolata', monospace;
 		font-size: 80%;
 		color: white;
-  }
+	}
 }
 
 .projects {
 	/* items within the boxes (<article class="projects">) are displayed in columns
 	with 2rem padding around each other; apply thin border around the boxes */
-  display: flex;
-  flex-flow: column;
-  border:  1px solid #535178;
-  padding: 2rem;
+	display: flex;
+	flex-flow: column;
+	border:  1px solid #535178;
+	padding: 2rem;
 }
 
 .projects > h1 {
 	/* setting margins around all sides of <h1> (project title) in these boxes */
-  margin: 1rem 1rem 0;
+	margin: 1rem 1rem 0;
 }
 
 .projects > p {
 	/* setting margins around all sides of <p> (project description) in these boxes */
-  margin: 0.25em 1rem 1rem;
+	margin: 0.25em 0.25rem 0.25rem;
 }
 
 .projects > img {
 	/* styling images in these boxes: setting the order they should be displayed;
 	images align to center of box; max-width of each image can't exceed 300px; */
-  order: -1;
-  align-self: center;
+	order: -1;
+	align-self: center;
 	max-width: 300px;
 }
 
 .projects > audio {
 	/* styling audio clips inside box: same as for images but with a set height
 	for the controls of the audio player */
-  order: -1;
-  align-self: center;
+	order: -1;
+	align-self: center;
 	max-width: 300px;
 	height: 100px;
 }
 
+/* ------------------------------------------------------------------------- */
+
+/* .web-projects { */
+/* items within the boxes (<article class="projects">) are displayed in columns
+with 2rem padding around each other; apply thin border around the boxes */
+/* display: flex;
+flex-flow: column;
+border:  1px solid #535178;
+padding: 2rem;
+} */
+
+/* .web-projects > h1 { */
+/* setting margins around all sides of <h1> (project title) in these boxes */
+/* margin: 1rem 1rem 0;
+} */
+
+/* .web-projects > p { */
+/* setting margins around all sides of <p> (project description) in these boxes */
+/* margin: 0.25em 1rem 1rem;
+}
+
+.web-projects > iframe {
+order: -1;
+align-self: center;
+margin: auto;
+} */
+
 /* h1 {
-	margin-top: 75px;
-	color: #535178;
-	font-family: 'Inconsolata', monospace;
-	font-size: 60px;
-	letter-spacing: 10px;
+margin-top: 75px;
+color: #535178;
+font-family: 'Inconsolata', monospace;
+font-size: 60px;
+letter-spacing: 10px;
 }
 
 h2 {
-	color: #b81e6f;
-	font-family: 'Inconsolata', monospace;
-	font-size: 42px;
-	margin-left: 40px;
-	max-width: 750px;
+color: #b81e6f;
+font-family: 'Inconsolata', monospace;
+font-size: 42px;
+margin-left: 40px;
+max-width: 750px;
 }
 
 p {
-	color: white;
-	font-family: 'Inconsolata', monospace;
-	font-size: 15px;
-	margin-left: 40px;
-	max-width: 700px;
+color: white;
+font-family: 'Inconsolata', monospace;
+font-size: 15px;
+margin-left: 40px;
+max-width: 700px;
 }
 
 p a {
-	color: white;
+color: white;
 } */
