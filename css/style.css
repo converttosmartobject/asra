@@ -9,6 +9,8 @@
 }
 
 @media only screen and (max-width: 800px) {
+	/* navigation links are displayed in a row but if screen width is > 800px
+	they will display in a column */
   header ul{
 		flex-direction: column;
   }
@@ -22,11 +24,14 @@ z-index: 3; /* bring layer to top of arrangement */
 }
 
 header ul {
+	/* navigation links can adapt to viewport, and are displayed with equal anount
+	of space around each other and have no bullet points showing */
 display: flex;
 justify-content: space-around;
 list-style-type: none;
 }
 
+	/* -------styling font and transitioning colors of navigation links------- */
 header ul li {
 font-family: 'Libre Barcode 39 Text', cursive;
 font-size: 50px;
@@ -45,28 +50,40 @@ header ul li a:hover {
 .active {
 	color: white;
 }
+/* ------------------------------------------------------------------------- */
 
 /* grid layout adopted from Craig's codepen
 titled "An Example of Nesting Flexbox inside CSS Grid" located here:
 https://codepen.io/profhobbs/pen/pGMxxa?editors=1100 */
 
 main {
+	/* layout stretches to fill screens of different sizes but maximum width is set to 500px */
   max-width: 500px;
   margin: 0 auto;
 }
 article {
+	/* setting margins on all 4 sides of boxes in the grid */
   margin: 1rem 0;
 }
 
 @supports (display: grid) {
+	/* setting the grid layout */
+
   main {
+		/* how far can a row in the grid be stretched out before wrapping to another row below */
     max-width: 10000px;
     margin: 0;
   }
+
   article {
+		/* not sure what effect this line of code has */
     margin: 0;
   }
+
   .portfoliowork {
+		/* display the boxes in a grid layout with the number of columns
+		adjusting to set values and have the boxes at a distance of 1rem
+		away from each other; style font and color of text within the boxes */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
@@ -77,26 +94,35 @@ article {
 }
 
 .projects {
+	/* items within the boxes (<article class="projects">) are displayed in columns
+	with 2rem padding around each other; apply thin border around the boxes */
   display: flex;
   flex-flow: column;
   border:  1px solid #535178;
   padding: 2rem;
 }
+
 .projects > h1 {
+	/* setting margins around all sides of <h1> (project title) in these boxes */
   margin: 1rem 1rem 0;
 }
-.projects > ul {
-  margin: 0 0 1rem;
-}
+
 .projects > p {
+	/* setting margins around all sides of <p> (project description) in these boxes */
   margin: 0.25em 1rem 1rem;
 }
+
 .projects > img {
+	/* styling images in these boxes: setting the order they should be displayed;
+	images align to center of box; max-width of each image can't exceed 300px; */
   order: -1;
   align-self: center;
 	max-width: 300px;
 }
+
 .projects > audio {
+	/* styling audio clips inside box: same as for images but with a set height
+	for the controls of the audio player */
   order: -1;
   align-self: center;
 	max-width: 300px;
