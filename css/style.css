@@ -113,7 +113,7 @@ article {
 
 .projects > p {
 	/* setting margins around all sides of <p> (project description) in these boxes */
-	margin: 0.25em 0.25rem 0.25rem;
+	margin: 0.25em 0.25rem 0.25rem 2rem;
 }
 
 .projects > img {
