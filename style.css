@@ -1,13 +1,15 @@
 * {
 	/* background: #9d9bcc; */
-	background: black;
-	/* background-image: url("assets/glitch.jpg"); */
-
 	/* box-sizing and padding adopted from Craig's codepen
 	titled "An Example of Nesting Flexbox inside CSS Grid" located here:
 	https://codepen.io/profhobbs/pen/pGMxxa?editors=1100 */
 	box-sizing: border-box;
 	padding: 1rem;
+}
+
+body {
+	background-image: url("assets/privasee1.PNG");
+	background-size: contain;
 }
 
 @media only screen and (max-width: 900px) {
@@ -37,6 +39,7 @@ header ul {
 header ul li {
 	font-family: 'Libre Barcode 39 Text', cursive;
 	font-size: 50px;
+	background-color: black;
 }
 
 header ul li a {
@@ -65,9 +68,11 @@ main {
 	max-width: 500px;
 	margin: 0 auto;
 }
+
 article {
 	/* setting margins on all 4 sides of boxes in the grid */
 	margin: 1rem 0;
+	background-color: black;
 }
 
 @supports (display: grid) {
@@ -113,7 +118,7 @@ article {
 
 .projects > p {
 	/* setting margins around all sides of <p> (project description) in these boxes */
-	margin: 0.25em 0.25rem 0.25rem 2rem;
+	margin: 0.25em 0.25rem 0.25rem 1rem;
 }
 
 .projects > img {
@@ -124,6 +129,30 @@ article {
 	max-width: 300px;
 }
 
+/* enlarge images when hovering over */
+.projects > img:hover {
+	position: relative;
+	transform: scale(1.75);
+	display:block;
+}
+
+.projects > a > img {
+	/* styling images in these boxes: setting the order they should be displayed;
+	images align to center of box; max-width of each image can't exceed 300px; */
+	order: -1;
+	align-self: center;
+	max-width: 300px;
+	margin-left: -20px;
+	margin-top: -15px;
+}
+
+/* enlarge images when hovering over */
+.projects > a > img:hover {
+	position: relative;
+	transform: scale(1.75);
+	display:block;
+}
+
 .projects > audio {
 	/* styling audio clips inside box: same as for images but with a set height
 	for the controls of the audio player */
@@ -131,6 +160,19 @@ article {
 	align-self: center;
 	max-width: 300px;
 	height: 100px;
+}
+
+.projects > iframe {
+	order: -1;
+	align-self: center;
+	max-width: 300px;
+	height: 300px;
+}
+
+.projects > iframe:hover {
+	position: relative;
+	transform: scale(1.75);
+	display:block;
 }
 
 /* ------------------------------------------------------------------------- */
